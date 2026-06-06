@@ -52,7 +52,7 @@ def retrieve_relevant_chunks(question, documents, top_k=5):
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(chunks=context_text, question=question)
 
-    llm = OllamaLLM(model="llama3.2:1b")
+    llm = OllamaLLM(model="gemma3:4b", temperature=0)
     response = llm.invoke(prompt)
 
     sources = list({doc.metadata.get("source", "Unknown") for doc in retrieved_docs})
