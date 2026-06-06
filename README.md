@@ -1,8 +1,6 @@
 # 📄 Multi-Document Analyzer and Q&A Assistant
 
-An LLM-powered document analysis and Q&A system that lets user upload any type of PDF document (research, medical, financial, legal, etc)
-and answer his questions related to the uploaded document. This project is heavily relied on **RAG Pipeline** with **Hybrid Retrieval** 
-method for efficient question-answering based conversation.
+An LLM-powered document analysis and Q&A system that lets user upload any type of PDF document (research, medical, financial, legal, etc) and answer his questions related to the uploaded document. This project is heavily relied on **RAG Pipeline** with **Hybrid Retrieval** method for efficient question-answering based conversation.
 
 ## 🚀 Features
 
@@ -14,7 +12,7 @@ method for efficient question-answering based conversation.
 - **Nomic-Embed-Text**: Converts the chunks and metadata into vector embeddings
 - **ChromaDB**: Vector database to store the embeddings 
 - **Hybrid Retrieval**: Combination of BM25(keyword-based) + Vector retrieval to fetch top related chunks 
-- **Llama3.2:1b**: Combines System Prompt + Retrieved Chunks to generate a contextual answer
+- **Gemma3:4b**: Combines System Prompt + Retrieved Chunks to generate a contextual answer
 - **Streamlit**: For an interactive dashboard for users
 
 ## 📄 Workflow
@@ -31,18 +29,10 @@ method for efficient question-answering based conversation.
 - After he enters his question, the question is also converted into vector embeddings.
 - Using these embeddings, Vector retriever along with BM25 retriever search for top-k relevant chunks from the database.
 - Ensemble Retriever combines the searched chunks of both retrievers by equally dividing the context of searched chunks.
-- Llama3.2:1b combines the system prompt, retrieved chunks along with filtering metadata to generate a contextual answer for the
+- Gemma3:4b combines the system prompt, retrieved chunks along with filtering metadata to generate a contextual answer for the
   user's question.
 - The generated answer is displayed to the user via Streamlit UI along with title, tags, source document of the answer and No.of
   chunks retrieved for the answer.
-
-## 🧰 Tech Stack
-
-- **Frontend**: Streamlit
-- **Backend**: LangChain, PyMuPDF4LLM, Regex
-- **LLM**: Llama3.2:1b
-- **Models**: Nomic-Embed-Text, KeyBERT
-- **Database**: ChromaDB
 
 ## 📁 Versions
 
@@ -51,6 +41,14 @@ For this project, there are two versions which work separately:
 **Version 1**: Initial version which works on local machine's Terminal
 
 **Version 2**: Upgraded version for which Streamlit UI is built for users
+
+## 🧰 Tech Stack
+
+- **Frontend**: Streamlit
+- **Backend**: LangChain, PyMuPDF4LLM, Regex
+- **LLM**: Gemma3:4b
+- **Models**: Nomic-Embed-Text, KeyBERT
+- **Database**: ChromaDB
 
 ## 📢 Future Enhancements
 
