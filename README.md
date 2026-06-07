@@ -11,7 +11,7 @@ An LLM-powered document analysis and Q&A system that lets user upload any type o
 - **Metadata**: Features added along with chunks for efficient retrieval.
 - **Nomic-Embed-Text**: Converts the chunks and metadata into vector embeddings
 - **ChromaDB**: Vector database to store the embeddings 
-- **Hybrid Retrieval**: Combination of BM25(keyword-based) + Vector retrieval to fetch top related chunks 
+- **Hybrid Retrieval**: Combination of Vector Search + BM25(keyword-based) search to fetch top related chunks 
 - **Gemma3:4b**: Combines System Prompt + Retrieved Chunks to generate a contextual answer
 - **Streamlit**: For an interactive dashboard for users
 
